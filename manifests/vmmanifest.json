@@ -1,0 +1,190 @@
+{
+    "vm_setup": {
+        "provider": "virtualbox",
+        "provisioner": "ansible",
+        "containers": "/111/containers",
+        "templates": "~/Development/vmlab/templates",
+        "admin_user": "acortinas",
+        "admin_ssh_key": "~/.ssh/id_rsa.pub"
+    },
+    "vm_group1": {
+        "db_server": {
+            "hostname": "test1",
+            "os": {
+                "type": "linux",
+                "distribution": "oracle",
+                "version": "7.6",
+                "major_relase": 7,
+                "min_release": 6
+            },
+            "resources": {
+                "cpus": 2,
+                "mem": 8192,
+                "disks": {
+                    "disk0": {
+                        "size": 40000,
+                        "type": "ext4"
+                    },
+                    "disk1": {
+                        "size": 5000,
+                        "type": "asm"
+                    },
+                    "disk2": {
+                        "size": 5000,
+                        "type": "asm"
+                    },
+                    "disk3": {
+                        "size": 5000,
+                        "type": "asm"
+                    },
+                    "disk4": {
+                        "size": 5000,
+                        "type": "asm"
+                    },
+                    "disk5": {
+                        "size": 5000,
+                        "type": "asm"
+                    }
+                },
+                "networks": {
+                    "private": {
+                        "type": "dhcp"
+                    },
+                    "public": {
+                        "bridge": "eno1"
+                    }
+                }
+            },
+            "provision": {
+            }
+        },
+        "as_server": {
+            "hostname": "test2",
+            "os": {
+                "type": "linux",
+                "distribution": "centos",
+                "version": "7.6",
+                "major_relase": 7,
+                "min_release": 6
+            },
+            "resources": {
+                "cpus": 1,
+                "mem": 2048,
+                "disks": {
+                    "disk1": 40000,
+                    "disk2": 20000,
+                    "disk3": 10000
+                },
+                "networks": {
+                    "private": {
+                        "type": "dhcp"
+                    },
+                    "public": {
+                        "bridge": "eno1"
+                    }
+                }
+            },
+            "provision": {
+            }
+        }
+    },
+    "vm_group2": {
+        "db_server": {
+            "hostname": "test3",
+            "os": {
+                "type": "linux",
+                "distribution": "oracle",
+                "version": "7.6",
+                "major_relase": 7,
+                "min_release": 6
+            },
+            "resources": {
+                "cpus": 2,
+                "mem": 8192,
+                "disks": {
+                    "disk0": {
+                        "id": 0,
+                        "size": 40000,
+                        "type": "ext4"
+                    },
+                    "disk1": {
+                        "id": 1,
+                        "size": 5000,
+                        "type": "asm"
+                    },
+                    "disk2": {
+                        "id": 2,
+                        "size": 5000,
+                        "type": "asm"
+                    },
+                    "disk3": {
+                        "id": 3,
+                        "size": 5000,
+                        "type": "asm"
+                    },
+                    "disk4": {
+                        "id": 4,
+                        "size": 5000,
+                        "type": "asm"
+                    },
+                    "disk5": {
+                        "id": 5,
+                        "size": 5000,
+                        "type": "asm"
+                    }
+                },
+                "networks": {
+                    "private": {
+                        "type": "dhcp"
+                    },
+                    "public": {
+                        "bridge": "eno1"
+                    }
+                }
+            },
+            "provision": {
+            }
+        },
+        "as_server": {
+            "hostname": "test4",
+            "os": {
+                "type": "linux",
+                "distribution": "centos",
+                "version": "7.6",
+                "major_relase": 7,
+                "min_release": 6
+            },
+            "resources": {
+                "cpus": 1,
+                "mem": 2048,
+                "disks": {
+                    "disk0": {
+                        "id": 0,
+                        "size": 40000,
+                        "type": "ext4"
+                    },
+                    "disk1": {
+                        "id": 1,
+                        "size": 20000,
+                        "type": "ext4"
+                    },
+                    "disk2": {
+                        "id": 2,
+                        "size": 5000,
+                        "type": "ext4"
+                    }
+                },
+                "networks": {
+                    "private": {
+                        "type": "dhcp"
+                    },
+                    "public": {
+                        "bridge": "eno1"
+                    }
+                }
+            },
+            "provision": {
+            }
+        }
+    }
+}

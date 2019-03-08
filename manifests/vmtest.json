@@ -1,0 +1,81 @@
+{
+    "vm_setup": {
+        "provider": "virtualbox",
+        "provisioner": "ansible",
+        "containers": "/111/containers",
+        "templates": "~/Development/vmlab/templates",
+        "admin_user": "acortinas",
+        "admin_ssh_key": "~/.ssh/id_rsa.pub"
+    },
+    "vm_group1": {
+        "db_server": {
+            "hostname": "test1",
+            "os": {
+                "type": "linux",
+                "distribution": "oracle",
+                "version": "7.6",
+                "major_release": 7,
+                "minor_release": 6
+            },
+            "resources": {
+                "cpus": 1,
+                "mem": 1024,
+                "disks": {
+                    "disk0": {
+                        "size": 40000,
+                        "type": "ext4"
+                    },
+                    "disk1": {
+                        "size": 5000,
+                        "type": "asm"
+                    },
+                    "disk2": {
+                        "size": 5000,
+                        "type": "asm"
+                    },
+                    "disk3": {
+                        "size": 5000,
+                        "type": "asm"
+                    },
+                    "disk4": {
+                        "size": 5000,
+                        "type": "asm"
+                    },
+                    "disk5": {
+                        "size": 5000,
+                        "type": "asm"
+                    }
+                },
+                "networks": {
+                    "private": {
+                        "type": "dhcp"
+                    },
+                    "public": {
+                        "bridge": "eno1"
+                    }
+                }
+            },
+            "info": {
+                "provider": "vagrant",
+                "sync_folders": {
+                    "data": { 
+                        "source": "/path/to/data",
+                        "target": "/data"
+                    },
+                    "shared": {
+                        "source": "/path/to/shared",
+                        "target": "/shared"
+                    },
+                    "software": {
+                        "source": "/path/to/software",
+                        "target": "/software"
+                    },
+                    "staging": {
+                        "source": "/path/to/staging",
+                        "target": "/staging"
+                    }
+                }
+            }
+        }
+    }
+}
