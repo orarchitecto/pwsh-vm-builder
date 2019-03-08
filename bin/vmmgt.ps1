@@ -29,7 +29,7 @@
    This program requires Ansible, Vagrant, VirtualBox installed.
    File structure
 .FUNCTIONALITY
-   Terraform VM Environments.
+   Terraform VM Environments
 #>
 
 # Init
