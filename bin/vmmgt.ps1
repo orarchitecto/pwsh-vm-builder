@@ -43,9 +43,10 @@ param(
 )
 
 # Global Variables
-$manifest_file_loc    = "/home/acortinas/Development/vmlab/manifests"
-$state_file_loc       = "/home/acortinas/Development/vmlab/bin"
-$template_loc         = "/home/acortinas/Development/vmlab/templates"
+$base_dir             = (Get-Location).path 
+$manifest_file_loc    = Join-Path -Path $base_dir -ChildPath "/manifests"
+$state_file_loc       = Join-Path -Path $base_dir -ChildPath "/bin"
+$template_loc         = Join-Path -Path $base_dir -ChildPath "/templates"
 $manifest_file_exists = 0
 $state_file_exists    = 0
 $new_state            = 0

@@ -3,7 +3,7 @@
         "provider": "virtualbox",
         "provisioner": "ansible",
         "containers": "/111/containers",
-        "templates": "~/Development/vmlab/templates",
+        "templates": "~/Development/pwsh-vm-builder/templates",
         "admin_user": "acortinas",
         "admin_ssh_key": "~/.ssh/id_rsa.pub"
     },
@@ -57,6 +57,7 @@
             },
             "info": {
                 "provider": "vagrant",
+                "box": "bento/oracle-7.6",
                 "sync_folders": {
                     "data": { 
                         "source": "/path/to/data",
